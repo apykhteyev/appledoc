@@ -18,6 +18,7 @@ jobs:
           RETRY_SLEEP: "300"
           MERGE_CONFLICT_ACTION: "fail"
       - uses: peter-evans/create-or-update-comment@v4 
+        if: ${{ !steps.autoupdate.outputs.conflicted }}
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
