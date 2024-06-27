@@ -20,7 +20,7 @@ jobs:
       - uses: peter-evans/create-or-update-comment@v4 
         if: ${{ !steps.autoupdate.outputs.conflicted }}
         with:
-          issue-id: ${{ github.event.pull_request.number }}
+          issue-number: ${{ github.event.pull_request.number }}
           body: |
             This comment was written by a bot!
           reactions: rocket
