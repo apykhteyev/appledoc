@@ -17,3 +17,9 @@ jobs:
           RETRY_COUNT: "5"
           RETRY_SLEEP: "300"
           MERGE_CONFLICT_ACTION: "fail"
+      - uses: peter-evans/create-or-update-comment@v4 
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            This comment was written by a bot!
+          reactions: rocket
